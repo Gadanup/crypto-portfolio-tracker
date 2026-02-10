@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: #fafafa;
+  --color-surface: #ffffff;
+  --color-elevated: #f5f5f5;
+  --color-border: #e2e8f0;
+
+  --color-text-primary: #1e2329;
+  --color-text-secondary: #707a8a;
+
+  --color-accent: #f0b90b;
+  --color-accent-hover: #d4a40a;
+
+  --color-profit: #0ecb81;
+  --color-profit-bg: #0ecb8115;
+  --color-loss: #f6465d;
+  --color-loss-bg: #f6465d15;
+
+  --color-info: #3b82f6;
+  --color-warning: #f0b90b;
+}
+
+@layer base {
+  .dark {
+    --color-background: #0b0e11;
+    --color-surface: #1e2329;
+    --color-elevated: #2b3139;
+    --color-border: #2b3139;
+
+    --color-text-primary: #eaecef;
+    --color-text-secondary: #848e9c;
+  }
+}
+
+@layer base {
+  html {
+    font-family:
+      'Inter',
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+}
