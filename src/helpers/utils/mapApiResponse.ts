@@ -5,7 +5,6 @@ import type {
   CoinInfo,
   CoinUrls,
   CoinPlatform,
-  TrendingCoin,
   GlobalMarketData,
   CoinCapHistoryPoint,
   CoinCapAsset,
@@ -103,15 +102,6 @@ export interface RawCmcGlobalData {
       last_updated: string;
     }
   >;
-}
-
-export interface RawCmcTrendingItem {
-  id: number;
-  name: string;
-  symbol: string;
-  slug: string;
-  cmc_rank: number;
-  quote: Record<string, RawCmcQuote>;
 }
 
 // ─── Raw CoinCap Response Interfaces ────────────────────────────────────
@@ -245,15 +235,6 @@ export const mapCmcGlobalData = (
     lastUpdated: currencyQuote.last_updated,
   };
 };
-
-export const mapCmcTrendingItem = (raw: RawCmcTrendingItem): TrendingCoin => ({
-  id: raw.id,
-  name: raw.name,
-  symbol: raw.symbol,
-  slug: raw.slug,
-  cmcRank: raw.cmc_rank,
-  quote: mapCmcQuoteRecord(raw.quote),
-});
 
 // ─── CoinCap Mappers ────────────────────────────────────────────────────
 

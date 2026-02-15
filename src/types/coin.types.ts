@@ -71,15 +71,6 @@ export interface CoinUrls {
   sourceCode: string[];
 }
 
-export interface TrendingCoin {
-  id: number;
-  name: string;
-  symbol: string;
-  slug: string;
-  cmcRank: number;
-  quote: Record<string, CoinQuote>;
-}
-
 export interface CoinCapHistoryPoint {
   priceUsd: string;
   time: number;

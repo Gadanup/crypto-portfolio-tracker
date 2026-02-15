@@ -5,7 +5,6 @@ export type {
   CoinPlatform,
   CoinInfo,
   CoinUrls,
-  TrendingCoin,
   CoinCapHistoryPoint,
   CoinCapAsset,
   GlobalMarketData,

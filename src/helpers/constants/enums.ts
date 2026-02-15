@@ -1,8 +1,7 @@
 export enum CoinCapInterval {
-  FIVE_MIN = 'm5',
-  FIFTEEN_MIN = 'm15',
   ONE_HOUR = 'h1',
   SIX_HOUR = 'h6',
+  TWELVE_HOUR = 'h12',
   ONE_DAY = 'd1',
 }
 
@@ -18,10 +17,10 @@ export const TIME_RANGE_TO_COINCAP_INTERVAL: Record<
   TimeRange,
   CoinCapInterval
 > = {
-  [TimeRange.DAY]: CoinCapInterval.FIVE_MIN,
-  [TimeRange.WEEK]: CoinCapInterval.FIFTEEN_MIN,
-  [TimeRange.MONTH]: CoinCapInterval.ONE_HOUR,
-  [TimeRange.THREE_MONTHS]: CoinCapInterval.SIX_HOUR,
+  [TimeRange.DAY]: CoinCapInterval.ONE_HOUR,
+  [TimeRange.WEEK]: CoinCapInterval.ONE_HOUR,
+  [TimeRange.MONTH]: CoinCapInterval.SIX_HOUR,
+  [TimeRange.THREE_MONTHS]: CoinCapInterval.TWELVE_HOUR,
   [TimeRange.YEAR]: CoinCapInterval.ONE_DAY,
 };
 
