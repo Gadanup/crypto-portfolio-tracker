@@ -131,11 +131,11 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 ---
 
-- [ ] **Phase 1: API Layer**
+- [x] **Phase 1: API Layer**
 
 **Goal**: Complete dual-API integration (CoinMarketCap + CoinCap) — fetch wrappers, all endpoint functions, all TanStack Query hooks. Testable independently via a simple debug page.
 
-- [ ] **1.1 — API Clients (Fetch Wrappers)**
+- [x] **1.1 — API Clients (Fetch Wrappers)**
 
 **Actions**:
 
@@ -157,7 +157,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 **Acceptance criteria**: `cmcClient.get<T>(path, params)` adds the API key header automatically. `coinCapClient.get<T>(path, params)` works without auth. Both are generic and return typed data.
 
-- [ ] **1.2 — Response Mappers**
+- [x] **1.2 — Response Mappers**
 
 **Actions**:
 
@@ -175,7 +175,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 **Acceptance criteria**: Each mapper takes a raw API response shape and returns the correctly typed camelCase interface with proper number types.
 
-- [ ] **1.3 — Endpoint Functions**
+- [x] **1.3 — Endpoint Functions**
 
 **Actions**:
 
@@ -200,7 +200,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 **Acceptance criteria**: Each function calls the correct API URL with proper params, maps the response through the appropriate mapper, and returns typed data.
 
-- [ ] **1.4 — TanStack Query Provider Setup**
+- [x] **1.4 — TanStack Query Provider Setup**
 
 **Actions**:
 
@@ -212,7 +212,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 **Acceptance criteria**: TanStack Query DevTools visible in dev mode. Provider wraps the entire app.
 
-- [ ] **1.5 — TanStack Query Hooks**
+- [x] **1.5 — TanStack Query Hooks**
 
 **Actions**:
 
@@ -230,7 +230,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 **Acceptance criteria**: Each hook uses the correct query key from the factory, correct endpoint function, correct staleTime/refetchInterval. All hooks return `{ data, isLoading, isError, error }` with proper types.
 
-- [ ] **1.6 — API Layer Verification**
+- [x] **1.6 — API Layer Verification**
 
 **Actions**:
 
@@ -250,7 +250,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 **Goal**: App has routing, a responsive layout (header + sidebar + content area), theme toggling, and currency selection. All pages exist as placeholders.
 
-- [ ] **2.1 — React Router Setup**
+- [x] **2.1 — React Router Setup**
 
 **Actions**:
 
@@ -267,7 +267,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 **Acceptance criteria**: Navigating to each route renders the correct placeholder. Unknown routes show a 404 page.
 
-- [ ] **2.2 — Theme System**
+- [x] **2.2 — Theme System**
 
 **Actions**:
 
@@ -282,7 +282,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 **Acceptance criteria**: Theme persists across page reloads. System preference detected on first visit. `dark:` Tailwind classes activate correctly.
 
-- [ ] **2.3 — Currency Context**
+- [x] **2.3 — Currency Context**
 
 **Actions**:
 
@@ -296,7 +296,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 
 **Acceptance criteria**: Currency selection persists across reloads. Accessible from any component.
 
-- [ ] **2.4 — useLocalStorage & useDebounce Hooks**
+- [x] **2.4 — useLocalStorage & useDebounce Hooks**
 
 **Actions**:
 
