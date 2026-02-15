@@ -16,6 +16,14 @@ export const TEXT_CONTENT = {
       BTC_DOMINANCE: 'BTC Dominance',
       ACTIVE_COINS: 'Active Cryptocurrencies',
     },
+    TABLE: {
+      COIN: 'Coin',
+      PRICE: 'Price',
+      CHANGE_24H: '24h %',
+      CHANGE_7D: '7d %',
+      MARKET_CAP: 'Market Cap',
+      VOLUME_24H: 'Volume (24h)',
+    },
     TRENDING_TITLE: 'Trending',
   },
   COIN_DETAIL: {

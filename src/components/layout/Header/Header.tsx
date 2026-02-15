@@ -1,7 +1,8 @@
-import { Sun, Moon, Search } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 
 import { useTheme } from '@/hooks/useTheme';
 import { useCurrency } from '@/hooks/useCurrency';
+import SearchDropdown from '@/features/dashboard/components/SearchDropdown';
 
 import type { SupportedCurrency } from '@/types';
 
@@ -20,17 +21,7 @@ const Header = (): React.JSX.Element => {
       </div>
 
       <div className="hidden flex-1 justify-center px-8 md:flex">
-        <div className="relative w-full max-w-md">
-          <Search
-            size={16}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary"
-          />
-          <input
-            type="text"
-            placeholder="Search coins..."
-            className="h-9 w-full rounded-lg border border-border bg-background pl-9 pr-3 text-sm text-text-primary placeholder:text-text-secondary focus:border-accent focus:outline-none"
-          />
-        </div>
+        <SearchDropdown />
       </div>
 
       <div className="flex items-center gap-2">

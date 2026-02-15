@@ -3,4 +3,7 @@ export { default as Card } from './Card/Card';
 export { default as Skeleton } from './Skeleton/Skeleton';
 export { default as Badge } from './Badge/Badge';
 export { default as ErrorFallback } from './ErrorFallback/ErrorFallback';
+export { default as ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { default as EmptyState } from './EmptyState/EmptyState';
+export { default as Pagination } from './Pagination/Pagination';
+export { default as SearchInput } from './SearchInput/SearchInput';
