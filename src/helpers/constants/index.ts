@@ -9,4 +9,5 @@ export {
 export { QUERY_KEYS } from './queryKeys';
 export { ROUTES, buildCoinDetailPath } from './routes';
 export { TEXT_CONTENT } from './textContent';
-export { THEME } from './theme';
+export { THEME_STORAGE_KEY, THEME_OPTIONS } from './theme';
+export type { ThemeMode } from './theme';
