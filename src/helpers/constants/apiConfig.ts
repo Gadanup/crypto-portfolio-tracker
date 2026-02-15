@@ -1,6 +1,6 @@
 export const API_CONFIG = {
   CMC: {
-    BASE_URL: import.meta.env.VITE_CMC_BASE_URL as string,
+    BASE_URL: '/api/cmc',
     API_KEY: import.meta.env.VITE_CMC_API_KEY as string,
     DEFAULT_PER_PAGE: 100,
     SEARCH_DEBOUNCE_MS: 300,
@@ -17,7 +17,7 @@ export const API_CONFIG = {
     RETRY_COUNT: 3,
   },
   COINCAP: {
-    BASE_URL: import.meta.env.VITE_COINCAP_BASE_URL as string,
+    BASE_URL: '/api/coincap',
     STALE_TIMES: {
       HISTORY_SHORT: 2 * 60_000,
       HISTORY_LONG: 10 * 60_000,
