@@ -11,7 +11,6 @@ export const API_CONFIG = {
       MAP: 24 * 60 * 60_000,
       INFO: 60 * 60_000,
       GLOBAL: 5 * 60_000,
-      TRENDING: 10 * 60_000,
       FIAT_MAP: 24 * 60 * 60_000,
       CATEGORIES: 60 * 60_000,
     },

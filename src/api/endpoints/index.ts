@@ -3,7 +3,6 @@ export {
   getCoinQuotes,
   getCoinMap,
   getCoinInfo,
-  getTrendingCoins,
 } from './cmcCoin.endpoints';
 
 export {

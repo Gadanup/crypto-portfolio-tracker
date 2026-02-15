@@ -5,4 +5,18 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), tsconfigPaths()],
+  server: {
+    proxy: {
+      '/api/cmc': {
+        target: 'https://pro-api.coinmarketcap.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/cmc/, ''),
+      },
+      '/api/coincap': {
+        target: 'https://api.coincap.io/v2',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/coincap/, ''),
+      },
+    },
+  },
 });

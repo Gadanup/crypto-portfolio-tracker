@@ -3,20 +3,13 @@ import {
   mapCmcListingItem,
   mapCmcMapItem,
   mapCmcCoinInfo,
-  mapCmcTrendingItem,
 } from '@/helpers/utils';
 
-import type {
-  CoinListingData,
-  CoinMapItem,
-  CoinInfo,
-  TrendingCoin,
-} from '@/types';
+import type { CoinListingData, CoinMapItem, CoinInfo } from '@/types';
 import type {
   RawCmcListingItem,
   RawCmcMapItem,
   RawCmcCoinInfo,
-  RawCmcTrendingItem,
 } from '@/helpers/utils/mapApiResponse';
 
 export const getCoinListings = async (
@@ -74,12 +67,4 @@ export const getCoinInfo = async (
   });
 
   return mapped;
-};
-
-export const getTrendingCoins = async (): Promise<TrendingCoin[]> => {
-  const rawItems = await cmcClient.get<RawCmcTrendingItem[]>(
-    '/v1/cryptocurrency/trending/latest',
-  );
-
-  return rawItems.map(mapCmcTrendingItem);
 };

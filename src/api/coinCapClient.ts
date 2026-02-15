@@ -34,11 +34,19 @@ const get = async <TData>(
   const queryString = params ? `?${buildQueryString(params)}` : '';
   const url = `${API_CONFIG.COINCAP.BASE_URL}${path}${queryString}`;
 
+  const headers: Record<string, string> = {
+    Accept: 'application/json',
+  };
+
+  const apiKey = import.meta.env.VITE_COINCAP_API_KEY as string;
+
+  if (apiKey) {
+    headers['Authorization'] = `Bearer ${apiKey}`;
+  }
+
   const response = await fetch(url, {
     method: 'GET',
-    headers: {
-      Accept: 'application/json',
-    },
+    headers,
   });
 
   if (!response.ok) {

@@ -3,7 +3,6 @@ export {
   mapCmcMapItem,
   mapCmcCoinInfo,
   mapCmcGlobalData,
-  mapCmcTrendingItem,
   mapCoinCapHistoryPoint,
   mapCoinCapAsset,
 } from './mapApiResponse';

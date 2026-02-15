@@ -5,7 +5,6 @@ export const QUERY_KEYS = {
     QUOTES: (coinIds: string) => ['coins', 'quotes', coinIds] as const,
     MAP: ['coins', 'map'] as const,
     INFO: (coinId: string) => ['coins', 'info', coinId] as const,
-    TRENDING: ['coins', 'trending'] as const,
     CATEGORIES: ['coins', 'categories'] as const,
   },
   CHARTS: {
