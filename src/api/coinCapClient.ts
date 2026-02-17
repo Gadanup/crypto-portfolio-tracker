@@ -31,22 +31,21 @@ const get = async <TData>(
   path: string,
   params?: Record<string, string | number | boolean>,
 ): Promise<TData> => {
-  const queryString = params ? `?${buildQueryString(params)}` : '';
-  const url = `${API_CONFIG.COINCAP.BASE_URL}${path}${queryString}`;
-
-  const headers: Record<string, string> = {
-    Accept: 'application/json',
+  const allParams: Record<string, string | number | boolean> = {
+    ...params,
   };
 
   const apiKey = import.meta.env.VITE_COINCAP_API_KEY as string;
-
-  if (apiKey) {
-    headers['Authorization'] = `Bearer ${apiKey}`;
+  if (apiKey && apiKey !== 'undefined') {
+    allParams.apiKey = apiKey;
   }
+
+  const queryString = buildQueryString(allParams);
+  const url = `${API_CONFIG.COINCAP.BASE_URL}${path}?${queryString}`;
 
   const response = await fetch(url, {
     method: 'GET',
-    headers,
+    headers: { Accept: 'application/json' },
   });
 
   if (!response.ok) {
@@ -57,7 +56,6 @@ const get = async <TData>(
   }
 
   const json = (await response.json()) as RawCoinCapResponse<TData>;
-
   return json.data;
 };
 

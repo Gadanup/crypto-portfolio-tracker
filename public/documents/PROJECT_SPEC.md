@@ -16,37 +16,37 @@ A real-time cryptocurrency portfolio tracker that lets users monitor live prices
 
 ### MVP (Must Ship)
 
-| Feature | Description |
-|---------|-------------|
-| **Live Price Table** | Paginated, sortable, filterable table of top coins by market cap. Auto-refreshes every 90s via TanStack Query polling. Columns: rank, name/symbol, price, 24h %, 7d %, market cap, volume. |
-| **Coin Search** | Debounced search input (300ms) filtering against the CMC coin map (cached locally). Results appear in a dropdown with coin name, symbol, rank. Keyboard navigable. |
-| **Coin Detail Page** | Price chart (line) with time range selector (24h, 7d, 30d, 90d, 1y) using CoinCap history data. Key stats: market cap, volume, circulating supply, price change percentages. |
-| **Portfolio Builder** | Add coins with quantity and buy price. View total portfolio value, individual P&L (amount, percentage), allocation breakdown. Add/remove/edit holdings. Persisted to LocalStorage. |
-| **Portfolio Table** | Table of holdings with: coin name, quantity, avg buy price, current price, P&L, allocation %. Sortable by any column. |
-| **Multi-Currency** | Toggle display currency between USD, EUR, and BTC. Persisted preference. All prices and P&L update accordingly. CMC supports `convert` param natively. |
-| **Dark/Light Mode** | Theme toggle with system preference detection on first visit. Persisted to LocalStorage. Smooth transition between modes. |
-| **Responsive Design** | Mobile-first layout. Dashboard table collapses to card view on small screens. Navigation adapts from sidebar to bottom nav or hamburger menu. |
-| **Skeleton Loaders** | Skeleton placeholders that match the exact shape of the content they replace (table rows, chart area, stat cards). |
-| **Error Handling** | Error boundaries around every feature section. Retry buttons on failed API calls. Graceful fallback UI. Toast notifications for user actions. |
+| Feature               | Description                                                                                                                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Live Price Table**  | Paginated, sortable, filterable table of top coins by market cap. Auto-refreshes every 90s via TanStack Query polling. Columns: rank, name/symbol, price, 24h %, 7d %, market cap, volume. |
+| **Coin Search**       | Debounced search input (300ms) filtering against the CMC coin map (cached locally). Results appear in a dropdown with coin name, symbol, rank. Keyboard navigable.                         |
+| **Coin Detail Page**  | Price chart (line) with time range selector (24h, 7d, 30d, 90d, 1y) using CoinCap history data. Key stats: market cap, volume, circulating supply, price change percentages.               |
+| **Portfolio Builder** | Add coins with quantity and buy price. View total portfolio value, individual P&L (amount, percentage), allocation breakdown. Add/remove/edit holdings. Persisted to LocalStorage.         |
+| **Portfolio Table**   | Table of holdings with: coin name, quantity, avg buy price, current price, P&L, allocation %. Sortable by any column.                                                                      |
+| **Multi-Currency**    | Toggle display currency between USD, EUR, and BTC. Persisted preference. All prices and P&L update accordingly. CMC supports `convert` param natively.                                     |
+| **Dark/Light Mode**   | Theme toggle with system preference detection on first visit. Persisted to LocalStorage. Smooth transition between modes.                                                                  |
+| **Responsive Design** | Mobile-first layout. Dashboard table collapses to card view on small screens. Navigation adapts from sidebar to bottom nav or hamburger menu.                                              |
+| **Skeleton Loaders**  | Skeleton placeholders that match the exact shape of the content they replace (table rows, chart area, stat cards).                                                                         |
+| **Error Handling**    | Error boundaries around every feature section. Retry buttons on failed API calls. Graceful fallback UI. Toast notifications for user actions.                                              |
 
 ### Nice-to-Have (Ship if Time Allows)
 
-| Feature | Description |
-|---------|-------------|
-| **Price Alerts** | Set upper/lower price thresholds per coin. Visual notification (toast + badge) when a threshold is crossed during a polling cycle. Alerts persisted to LocalStorage. Manage alerts from a dedicated panel. |
-| **Sparkline Mini-Charts** | Inline 7-day sparkline SVG charts in portfolio table rows, fetched from CoinCap history endpoint. |
-| **Animated Page Transitions** | Smooth route transitions using Framer Motion or CSS transitions. |
-| **Pagination Controls** | Full pagination component for the price table: page numbers, per-page selector, "showing X of Y" text. |
-| **CoinCap WebSocket** | Real-time streaming price updates via `wss://ws.coincap.io/prices` for top coins on dashboard. |
+| Feature                       | Description                                                                                                                                                                                                |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Price Alerts**              | Set upper/lower price thresholds per coin. Visual notification (toast + badge) when a threshold is crossed during a polling cycle. Alerts persisted to LocalStorage. Manage alerts from a dedicated panel. |
+| **Sparkline Mini-Charts**     | Inline 7-day sparkline SVG charts in portfolio table rows, fetched from CoinCap history endpoint.                                                                                                          |
+| **Animated Page Transitions** | Smooth route transitions using Framer Motion or CSS transitions.                                                                                                                                           |
+| **Pagination Controls**       | Full pagination component for the price table: page numbers, per-page selector, "showing X of Y" text.                                                                                                     |
+| **CoinCap WebSocket**         | Real-time streaming price updates via `wss://ws.coincap.io/prices` for top coins on dashboard.                                                                                                             |
 
 ### Stretch (Bonus / Post-Launch)
 
-| Feature | Description |
-|---------|-------------|
+| Feature                        | Description                                             |
+| ------------------------------ | ------------------------------------------------------- |
 | **Portfolio Allocation Chart** | Donut/pie chart showing allocation percentages by coin. |
-| **CSV Export** | Export portfolio holdings and P&L data to CSV. |
-| **PWA Support** | Service worker for offline access to cached data. |
-| **Compare Coins** | Side-by-side chart comparison of two coins. |
+| **CSV Export**                 | Export portfolio holdings and P&L data to CSV.          |
+| **PWA Support**                | Service worker for offline access to cached data.       |
+| **Compare Coins**              | Side-by-side chart comparison of two coins.             |
 
 ---
 
@@ -61,6 +61,7 @@ The app should feel like a real financial product — clean, data-dense, and pro
 ### Color Palette
 
 **Dark Mode (Primary)**:
+
 - Background: `#0B0E11` (near-black), Surface: `#1E2329` (dark gray), Elevated: `#2B3139`
 - Text primary: `#EAECEF`, Text secondary: `#848E9C`
 - Accent/brand: `#F0B90B` (gold/amber — crypto-native feel)
@@ -69,6 +70,7 @@ The app should feel like a real financial product — clean, data-dense, and pro
 - Chart line: `#F0B90B` (brand gold)
 
 **Light Mode**:
+
 - Background: `#FAFAFA`, Surface: `#FFFFFF`, Elevated: `#F5F5F5`
 - Text primary: `#1E2329`, Text secondary: `#707A8A`
 - Same accent, success, and danger colors (these work on both backgrounds)
@@ -99,12 +101,14 @@ The app should feel like a real financial product — clean, data-dense, and pro
 ### Key Page Layouts
 
 **Dashboard (Home)**:
+
 - Top row: Global stats bar (total market cap, 24h volume, BTC dominance, active cryptocurrencies)
 - Search bar (prominent, always visible)
 - Main price table with sorting indicators, pagination
 - Table columns collapse progressively on smaller screens
 
 **Coin Detail**:
+
 - Hero section: coin icon, name, symbol, current price, 24h change badge
 - Interactive chart with time range pills (24h / 7D / 30D / 90D / 1Y) — data from CoinCap
 - Stats grid: market cap, volume, supply, rank, price change percentages
@@ -112,12 +116,14 @@ The app should feel like a real financial product — clean, data-dense, and pro
 - Back navigation
 
 **Portfolio**:
+
 - Summary cards row: total value, total P&L (amount + %), best/worst performer
 - Holdings table with sorting, edit/remove actions
 - Empty state when no holdings: illustration + CTA to browse coins
 - "Add Holding" modal/drawer with coin search, quantity, buy price fields
 
 **Alerts (Nice-to-Have)**:
+
 - List of active alerts with coin, threshold, direction (above/below), status
 - "Create Alert" form: coin search, price input, direction toggle
 - Alert notification toast appears over any page when triggered
@@ -145,19 +151,19 @@ Every async section has three alternative states:
 
 ## Tech Stack
 
-| Category | Choice | Rationale |
-|----------|--------|-----------|
-| Framework | React 18 + TypeScript | Industry standard, strict typing |
-| Build Tool | Vite | Fast HMR, optimized builds |
-| Package Manager | pnpm | Disk efficient, fast installs |
-| Routing | React Router v6 | Standard for SPAs |
-| Data Fetching | TanStack Query v5 | Polling, caching, query invalidation |
-| Styling | Tailwind CSS v4 | Utility-first, dark mode built-in, fast iteration |
-| Charts | Recharts | React-native, composable, supports line/area charts |
-| Forms | React Hook Form + Zod | For Add Holding modal, Alert creation |
-| Notifications | react-hot-toast or sonner | Lightweight toast library |
-| Icons | lucide-react | Consistent, tree-shakeable icon set |
-| Linting | ESLint + Prettier | Per coding standards |
+| Category        | Choice                    | Rationale                                           |
+| --------------- | ------------------------- | --------------------------------------------------- |
+| Framework       | React 18 + TypeScript     | Industry standard, strict typing                    |
+| Build Tool      | Vite                      | Fast HMR, optimized builds                          |
+| Package Manager | pnpm                      | Disk efficient, fast installs                       |
+| Routing         | React Router v6           | Standard for SPAs                                   |
+| Data Fetching   | TanStack Query v5         | Polling, caching, query invalidation                |
+| Styling         | Tailwind CSS v4           | Utility-first, dark mode built-in, fast iteration   |
+| Charts          | Recharts                  | React-native, composable, supports line/area charts |
+| Forms           | React Hook Form + Zod     | For Add Holding modal, Alert creation               |
+| Notifications   | react-hot-toast or sonner | Lightweight toast library                           |
+| Icons           | lucide-react              | Consistent, tree-shakeable icon set                 |
+| Linting         | ESLint + Prettier         | Per coding standards                                |
 
 ---
 
@@ -170,17 +176,17 @@ This project uses two complementary free APIs:
 
 ### CoinMarketCap Endpoints (Free Basic Tier)
 
-| Endpoint | Purpose | Refresh Strategy |
-|----------|---------|-----------------|
-| `GET /v1/cryptocurrency/listings/latest` | Dashboard price table (top coins by market cap with price, volume, % changes) | Poll every 90s via `refetchInterval` |
-| `GET /v1/cryptocurrency/quotes/latest` | Batch price lookup by IDs/symbols for portfolio value calculation | Poll every 90s |
-| `GET /v1/cryptocurrency/map` | Full coin list for search (ID, name, symbol, rank). Cache locally. | Stale time 24h (fetch once per session) |
-| `GET /v1/cryptocurrency/info` | Coin metadata: logo, description, URLs, tags | Stale time 1h |
-| `GET /v1/cryptocurrency/trending/latest` | Trending coins for dashboard | Stale time 10 min |
-| `GET /v1/global-metrics/quotes/latest` | Global market stats (total market cap, volume, BTC dominance) | Stale time 5 min |
-| `GET /v1/tools/price-conversion` | Currency conversion (USD/EUR/BTC) | On-demand |
-| `GET /v1/fiat/map` | Supported fiat currencies list | Stale time 24h (fetch once) |
-| `GET /v1/cryptocurrency/categories` | Coin categories for filtering | Stale time 1h |
+| Endpoint                                 | Purpose                                                                       | Refresh Strategy                        |
+| ---------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------- |
+| `GET /v1/cryptocurrency/listings/latest` | Dashboard price table (top coins by market cap with price, volume, % changes) | Poll every 90s via `refetchInterval`    |
+| `GET /v1/cryptocurrency/quotes/latest`   | Batch price lookup by IDs/symbols for portfolio value calculation             | Poll every 90s                          |
+| `GET /v1/cryptocurrency/map`             | Full coin list for search (ID, name, symbol, rank). Cache locally.            | Stale time 24h (fetch once per session) |
+| `GET /v1/cryptocurrency/info`            | Coin metadata: logo, description, URLs, tags                                  | Stale time 1h                           |
+| `GET /v1/cryptocurrency/trending/latest` | Trending coins for dashboard                                                  | Stale time 10 min                       |
+| `GET /v1/global-metrics/quotes/latest`   | Global market stats (total market cap, volume, BTC dominance)                 | Stale time 5 min                        |
+| `GET /v1/tools/price-conversion`         | Currency conversion (USD/EUR/BTC)                                             | On-demand                               |
+| `GET /v1/fiat/map`                       | Supported fiat currencies list                                                | Stale time 24h (fetch once)             |
+| `GET /v1/cryptocurrency/categories`      | Coin categories for filtering                                                 | Stale time 1h                           |
 
 **Authentication**: API key passed via `X-CMC_PRO_API_KEY` header on every request.
 
@@ -188,12 +194,12 @@ This project uses two complementary free APIs:
 
 ### CoinCap Endpoints (Free, No Key Required)
 
-| Endpoint | Purpose | Refresh Strategy |
-|----------|---------|-----------------|
-| `GET /v2/assets/{id}/history` | Historical price data for charts (interval: m5, m15, h1, h6, d1) | Stale time varies: 24h chart = 2 min, 7d+ = 10 min |
-| `GET /v2/assets/{id}` | Single asset data (supplementary detail) | Stale time 5 min |
-| `GET /v2/assets` | Asset list (fallback/supplementary) | Stale time 5 min |
-| `WSS wss://ws.coincap.io/prices?assets=...` | WebSocket streaming for real-time price ticks (Nice-to-Have) | Continuous |
+| Endpoint                                    | Purpose                                                          | Refresh Strategy                                   |
+| ------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------- |
+| `GET /v2/assets/{id}/history`               | Historical price data for charts (interval: m5, m15, h1, h6, d1) | Stale time varies: 24h chart = 2 min, 7d+ = 10 min |
+| `GET /v2/assets/{id}`                       | Single asset data (supplementary detail)                         | Stale time 5 min                                   |
+| `GET /v2/assets`                            | Asset list (fallback/supplementary)                              | Stale time 5 min                                   |
+| `WSS wss://ws.coincap.io/prices?assets=...` | WebSocket streaming for real-time price ticks (Nice-to-Have)     | Continuous                                         |
 
 **Base URL**: `https://api.coincap.io`
 
@@ -225,11 +231,9 @@ export const QUERY_KEYS = {
   COINS: {
     LISTINGS: (currency: string, page: number, perPage: number) =>
       ['coins', 'listings', currency, page, perPage] as const,
-    QUOTES: (coinIds: string) =>
-      ['coins', 'quotes', coinIds] as const,
+    QUOTES: (coinIds: string) => ['coins', 'quotes', coinIds] as const,
     MAP: ['coins', 'map'] as const,
-    INFO: (coinId: string) =>
-      ['coins', 'info', coinId] as const,
+    INFO: (coinId: string) => ['coins', 'info', coinId] as const,
     TRENDING: ['coins', 'trending'] as const,
     CATEGORIES: ['coins', 'categories'] as const,
   },
@@ -559,7 +563,7 @@ export const API_CONFIG = {
     RETRY_COUNT: 3,
   },
   COINCAP: {
-    BASE_URL: 'https://api.coincap.io/v2',
+    BASE_URL: 'https://rest.coincap.io/v3',
     STALE_TIMES: {
       HISTORY_SHORT: 2 * 60_000,
       HISTORY_LONG: 10 * 60_000,
@@ -722,13 +726,13 @@ export const mapCmcListingItem = (raw: RawCmcListingItem): CoinListingData => ({
 
 ## Key Technical Decisions
 
-| Decision | Rationale |
-|----------|-----------|
-| **Dual API (CMC + CoinCap)** | CMC free tier has no historical/chart data. CoinCap fills this gap perfectly with free history endpoints and WebSocket. Together they cover all needs. |
-| **Tailwind CSS** over MUI | Data-dense project needs custom styling. Tailwind gives full control. Dark mode is trivial with `dark:` prefix. |
-| **Recharts** for charts | React-native, composable, supports line/area charts. CoinCap provides the price history data. |
-| **LocalStorage** for persistence | No auth needed for Project 1. Portfolio, alerts, and preferences all fit in LocalStorage. Clean `useLocalStorage` hook abstracts this. |
-| **No global state library** | TanStack Query handles all server state. LocalStorage hooks handle persistence. React state + context for theme/currency. No Zustand or Redux needed. |
-| **camelCase mapping at API boundary** | Keeps all component code consistent with TypeScript conventions. One mapping layer, no snake_case leaking into UI code. |
-| **90s polling interval** | More conservative than 60s to respect CMC's 10k credits/month budget. Still feels responsive. |
-| **Coin map cached locally** | The full coin list (~10k entries) changes rarely. Fetching once per session and filtering client-side is far more credit-efficient than hitting search endpoints. |
+| Decision                              | Rationale                                                                                                                                                         |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Dual API (CMC + CoinCap)**          | CMC free tier has no historical/chart data. CoinCap fills this gap perfectly with free history endpoints and WebSocket. Together they cover all needs.            |
+| **Tailwind CSS** over MUI             | Data-dense project needs custom styling. Tailwind gives full control. Dark mode is trivial with `dark:` prefix.                                                   |
+| **Recharts** for charts               | React-native, composable, supports line/area charts. CoinCap provides the price history data.                                                                     |
+| **LocalStorage** for persistence      | No auth needed for Project 1. Portfolio, alerts, and preferences all fit in LocalStorage. Clean `useLocalStorage` hook abstracts this.                            |
+| **No global state library**           | TanStack Query handles all server state. LocalStorage hooks handle persistence. React state + context for theme/currency. No Zustand or Redux needed.             |
+| **camelCase mapping at API boundary** | Keeps all component code consistent with TypeScript conventions. One mapping layer, no snake_case leaking into UI code.                                           |
+| **90s polling interval**              | More conservative than 60s to respect CMC's 10k credits/month budget. Still feels responsive.                                                                     |
+| **Coin map cached locally**           | The full coin list (~10k entries) changes rarely. Fetching once per session and filtering client-side is far more credit-efficient than hitting search endpoints. |

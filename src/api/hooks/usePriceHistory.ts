@@ -28,5 +28,6 @@ export const usePriceHistory = (
     queryFn: () => getAssetHistory(assetId!, interval, start, end),
     enabled: !!assetId,
     staleTime: API_CONFIG.COINCAP.STALE_TIMES.HISTORY_LONG,
+    retry: 1,
   });
 };

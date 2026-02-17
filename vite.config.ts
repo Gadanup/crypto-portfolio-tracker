@@ -13,7 +13,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api\/cmc/, ''),
       },
       '/api/coincap': {
-        target: 'https://api.coincap.io/v2',
+        target: 'https://rest.coincap.io/v3',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/coincap/, ''),
       },
