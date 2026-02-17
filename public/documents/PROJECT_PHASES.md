@@ -93,7 +93,7 @@ Estimated total: **~2 weeks** (per the roadmap cadence).
 - Create `.env.local` with:
   - `VITE_CMC_BASE_URL=https://pro-api.coinmarketcap.com`
   - `VITE_CMC_API_KEY=your-api-key-here` (get free key at https://coinmarketcap.com/api/)
-  - `VITE_COINCAP_BASE_URL=https://api.coincap.io/v2`
+  - `VITE_COINCAP_BASE_URL=https://rest.coincap.io/v3`
 - Create `.env.example` with placeholder values (no real keys)
 - Add `.env.local` to `.gitignore`
 
